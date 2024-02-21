@@ -1,0 +1,17 @@
+<div class="cc-app-wrapper">
+    <div class="snap-drawers">
+        <div snap-drawer ng-include="tpl.SIDE_MENU"></div>
+        <div snap-drawer="right" ng-controller="CartController" ng-include="tpl.CART"></div>
+    </div>
+    <div class="cc-main-wrapper" snap-content>
+        <div cc-include="tpl.HEADER"></div>
+        <div class="cc-page-wrapper cc-image-full-screen__hide-marker"
+             ng-show="!searchUiState.isOpen() || (!searchUiState.hasResults() && !searchUiState.hasNoMatch())">
+            <div class="cc-ui-view cc-animate" ui-view></div>
+        </div>
+    </div>
+    <div class="cc-search-wrapper">
+        <div cc-include="tpl.SEARCH_BOX"></div>
+        <div cc-include="tpl.SEARCH_RESULT"></div>
+    </div>
+</div>
